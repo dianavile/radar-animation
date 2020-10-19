@@ -1,0 +1,137 @@
+body {
+    margin: 0;
+    padding: 0;
+    background: url(/assets/bg.jpg);
+    background-size: cover;
+}
+
+.radar {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-30%, -50%);
+    margin: 0;
+    padding: 0;
+    width: 480px;
+    height: 480px;
+    border-radius: 50%;
+    border: 20px solid #f7f7f7;
+    background: #000000 url(assets/map.PNG);
+    background-size: cover;
+    box-shadow: 0 8px 0 #c5c5c5, inset 0 0 100px rgba(31, 30, 72, .5);
+    overflow: hidden;
+}
+
+.radar::before {
+    content: '';
+    position: absolute;
+    top: 80%;
+    left: 55%;
+    width: 10px;
+    height: 10px;
+    background: rgba(31, 30, 72);
+    border-radius: 50%;
+    filter: blur(3px);
+    animation: glow 1s linear infinite;
+}
+
+.radar::after {
+    content: '';
+    position: absolute;
+    top: 60%;
+    left: 25%;
+    width: 10px;
+    height: 10px;
+    background: rgba(31, 30, 72);
+    border-radius: 50%;
+    filter: blur(3px);
+    animation: glow 1s linear infinite;
+}
+
+.radar li:nth-child(1),
+.radar li:nth-child(2),
+.radar li:nth-child(3),
+.radar li:nth-child(4) {
+    list-style: none;
+    position: absolute;
+    top: 50%;
+    height: 3px;
+    width: 100%;
+    background: rgba(31, 30, 72, 1);
+    border-radius: 50%;
+}
+
+.radar li:nth-child(2) {
+    transform: rotate(90deg);
+}
+
+.radar li:nth-child(3) {
+    transform: rotate(45deg);
+}
+
+.radar li:nth-child(4) {
+    transform: rotate(-45deg);
+}
+
+.radar li:nth-child(5),
+.radar li:nth-child(6),
+.radar li:nth-child(7) {
+    list-style: none;
+    position: absolute;
+    top: 50%;
+    height: 3px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 3px solid rgba(31, 30, 72, 1);
+    background: transparent;
+    border-radius: 50%;
+}
+
+.radar li:nth-child(5) {
+    width: 120px;
+    height: 120px;
+}
+
+.radar li:nth-child(6) {
+    width: 240px;
+    height: 240px;
+}
+
+.radar li:nth-child(7) {
+    width: 360px;
+    height: 360px;
+}
+
+.radar li:nth-child(8) {
+    list-style: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 250px;
+    height: 250px;
+    background: linear-gradient(45deg, #1F1E48 0%, transparent 90%);
+    transform-origin: top left;
+    animation: animate 2s linear infinite;
+}
+
+@keyframes animate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes glow {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
